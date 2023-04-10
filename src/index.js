@@ -13,20 +13,21 @@ export default function ({
     router.onRoute('courses.assignments.new', () => {
 
         // Set points possible if defined
-        if (pointsPossible !== undefined) {
+        if (typeof pointsPossible === 'number') {
             const input = document.getElementById('assignment_points_possible');
 
             input.value = pointsPossible;
         };
 
         // Select grading type if defined
-        if (gradingType !== undefined) {
+        if (typeof gradingType === 'string') {
             const select = document.getElementById('assignment_grading_type');
 
             select.value = gradingType;
 
             // Set grading standard ID if defined
-            if (gradingStandardId !== undefined) {
+            if ((gradingType === 'letter_grade' || gradingType === 'gpa_scale')
+                && typeof gradingStandardId === 'number') {
                 const input = document.getElementsByName('grading_standard_id')[0];
 
                 input.value = gradingStandardId;
@@ -34,7 +35,7 @@ export default function ({
         };
 
         // Select submission type if defined
-        if (submissionType !== undefined) {
+        if (typeof submissionType === 'string') {
             const select = document.getElementById('assignment_submission_type');
             const onlineSubmissionTypes = document.getElementById('assignment_online_submission_types');
             const externalToolSettings = document.getElementById('assignment_external_tool_settings');
@@ -45,7 +46,7 @@ export default function ({
         };
 
         // Set whether to omit the grade from the final grade
-        if (omitFromFinalGrade !== undefined) {
+        if (typeof omitFromFinalGrade === 'boolean') {
             const checkbox = document.getElementById('assignment_omit_from_final_grade');
 
             checkbox.checked = omitFromFinalGrade;
