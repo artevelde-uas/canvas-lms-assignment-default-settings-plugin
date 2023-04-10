@@ -10,7 +10,8 @@ export default function ({
     submissionType,
     omitFromFinalGrade
 }) {
-    router.onRoute('courses.assignments.new', () => {
+    router.onRoute('courses.assignments.new', async () => {
+        await dom.onElementReady('#edit_assignment_wrapper');
 
         // Set points possible if defined
         if (typeof pointsPossible === 'number') {
