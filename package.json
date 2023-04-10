@@ -1,0 +1,29 @@
+{
+  "name": "@artevelde-uas/canvas-lms-assignment-default-settings-plugin",
+  "version": "0.1.0",
+  "description": "Sets default options when creating a new assignment",
+  "keywords": [
+    "Canvas LMS"
+  ],
+  "license": "ISC",
+  "author": "Renaat De Muynck <renaat.demuynck@arteveldehs.be>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artevelde-uas/canvas-lms-assignment-default-settings-plugin.git"
+  },
+  "module": "src/index.js",
+  "files": [
+    "src/"
+  ],
+  "peerDependencies": {
+    "@artevelde-uas/canvas-lms-app": "^1.11.0"
+  },
+  "config": {
+    "scope": {
+      "course": true
+    },
+    "roles": {
+      "teacher": true
+    }
+  }
+}

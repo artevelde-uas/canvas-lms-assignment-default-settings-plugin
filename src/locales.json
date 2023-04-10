@@ -1,0 +1,26 @@
+{
+    "en": {
+        "package": {
+            "title": "Change default assignment settings",
+            "description": "Provides several options to change the default settings when creating a new assignment."
+        }
+    },
+    "nl": {
+        "package": {
+            "title": "Standaardinstellingen voor opdrachten wijzigen",
+            "description": "Biedt verschillende opties om de standaardinstellingen te wijzigen bij het maken van een nieuwe opdracht."
+        }
+    },
+    "fr": {
+        "package": {
+            "title": "Modifier les paramètres par défaut des devoirs",
+            "description": "Fournit plusieurs options pour modifier les paramètres par défaut lors de la création d'une nouvelle devoir."
+        }
+    },
+    "de": {
+        "package": {
+            "title": "Standardeinstellungen für Aufgaben ändern",
+            "description": "Bietet mehrere Optionen zum Ändern der Standardeinstellungen beim Erstellen einer neuen Aufgabe"
+        }
+    }
+}
