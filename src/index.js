@@ -8,7 +8,8 @@ export default function ({
     gradingType,
     gradingStandardId,
     omitFromFinalGrade,
-    submissionType
+    submissionType,
+    onlineEntryOptions
 }) {
     router.onRoute('courses.assignments.new', async () => {
         await dom.onElementReady('#edit_assignment_wrapper');
@@ -86,6 +87,17 @@ export default function ({
                     allowedAttemptsFields.style.display = 'block';
                     groupCategorySelector.style.display = 'block';
                     peerReviewsFields.style.display = 'block';
+
+                    // Set online entry options if defined
+                    if (Array.isArray(onlineEntryOptions)) {
+                        onlineEntryOptions.forEach(option => {
+                            const checkbox = onlineSubmissionTypes.querySelector(`[type="checkbox"][name="online_submission_types[${option}]"]`);
+
+                            if (checkbox === null) return;
+
+                            checkbox.click();
+                        });
+                    };
 
                     break;
 
