@@ -1,6 +1,6 @@
 {
   "name": "@artevelde-uas/canvas-lms-assignment-default-settings-plugin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Sets default options when creating a new assignment",
   "keywords": [
     "Canvas LMS"
