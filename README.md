@@ -14,8 +14,9 @@ The following configurable options are available:
 - Set the points possible.
 - Select the grading type.
 - Set the grading standard.
-- Select the sumission type.
 - Whether to omit the grade from the final grade.
+- Select the sumission type.
+- Set the online entry options
 
 ## Installation
 
@@ -39,8 +40,9 @@ addPlugin(assignmentDefaultSettingsPlugin, {
     pointsPossible: 20,
     gradingType: 'letter_grade',
     gradingStandardId: 123,
+    omitFromFinalGrade: true,
     submissionType: 'online',
-    omitFromFinalGrade: true
+    onlineEntryOptions: ['online_upload']
 });
 
 run();
@@ -48,10 +50,11 @@ run();
 
 ### Options
 
-|        Name            |    Type     | Description                                          |
-| :--------------------: | :---------: | :--------------------------------------------------- |
-| **pointsPossible**     | `{Number}`  | Sets the points possible.                            |
-| **gradingType**        | `{Enum}`    | Selects the grading type.                            |
-| **gradingStandardId**  | `{Number}`  | Set the grading standard.                            |
-| **submissionType**     | `{Enum}`    | Select the sumission type.                           |
-| **omitFromFinalGrade** | `{Boolean}` | Sets whether to omit the grade from the final grade. |
+|        Name            |    Type      | Description                                          |
+| :--------------------: | :----------: | :--------------------------------------------------- |
+| **pointsPossible**     | `{Number}`   | Sets the points possible.                            |
+| **gradingType**        | `{Enum}`     | Selects the grading type.                            |
+| **gradingStandardId**  | `{Number}`   | Set the grading standard.                            |
+| **omitFromFinalGrade** | `{Boolean}`  | Sets whether to omit the grade from the final grade. |
+| **submissionType**     | `{Enum}`     | Selects the sumission type.                          |
+| **onlineEntryOptions** | `{String[]}` | Sets the online entry options.                       |
