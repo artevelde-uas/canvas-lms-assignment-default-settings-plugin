@@ -37,10 +37,26 @@ export default function ({
 
                     // Set grading standard ID if defined
                     if (typeof gradingStandardId === 'number') {
-                        const input = document.getElementsByName('grading_standard_id')[0];
+                        // Find the letter grades form
+                        dom.onElementReady('#edit_letter_grades_form').then(async letterGradesForm => {
+                            const findGradingStandardLink = letterGradesForm.querySelector('a.find_grading_standard_link');
 
-                        input.value = gradingStandardId;
-                    };
+                            letterGradesForm.style.display = 'block';
+
+                            findGradingStandardLink.click();
+
+                            // Find and select the requested grading standard
+                            const gradingStandardsBrief = await dom.onElementReady(`#grading_standard_brief_${gradingStandardId}`);
+                            const selectGradingStandardLink = gradingStandardsBrief.querySelector('button.select_grading_standard_link');
+
+                            gradingStandardsBrief.style.display = 'block';
+
+                            selectGradingStandardLink.click();
+
+                            letterGradesForm.style.display = 'none';
+                            gradingStandardsBrief.style.display = 'none';
+                        });
+                    }
 
                     break;
 
