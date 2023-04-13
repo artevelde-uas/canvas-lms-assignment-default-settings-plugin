@@ -2,6 +2,8 @@ import { router, dom } from '@artevelde-uas/canvas-lms-app';
 
 import t from './i18n';
 
+import './index.css';
+
 
 export default function ({
     pointsPossible,
@@ -37,10 +39,19 @@ export default function ({
 
                     // Set grading standard ID if defined
                     if (typeof gradingStandardId === 'number') {
-                        const input = document.getElementsByName('grading_standard_id')[0];
+                        // Find the letter grades form
+                        dom.onElementReady('#edit_letter_grades_form').then(async letterGradesForm => {
+                            const findGradingStandardLink = letterGradesForm.querySelector('a.find_grading_standard_link');
 
-                        input.value = gradingStandardId;
-                    };
+                            findGradingStandardLink.click();
+
+                            // Find and select the requested grading standard
+                            const gradingStandardsBrief = await dom.onElementReady(`#grading_standard_brief_${gradingStandardId}`);
+                            const selectGradingStandardLink = gradingStandardsBrief.querySelector('button.select_grading_standard_link');
+
+                            selectGradingStandardLink.click();
+                        });
+                    }
 
                     break;
 

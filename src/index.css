@@ -1,0 +1,5 @@
+#content > #edit_letter_grades_form {
+  display: block !important;
+  position: fixed;
+  visibility: hidden;
+}
