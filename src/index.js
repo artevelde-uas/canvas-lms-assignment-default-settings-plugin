@@ -104,7 +104,8 @@ export default function ({
                         onlineEntryOptions.forEach(option => {
                             const checkbox = onlineSubmissionTypes.querySelector(`[type="checkbox"][name="online_submission_types[${option}]"]`);
 
-                            if (checkbox === null) return;
+                            // Don't click on checkbox if it is already checked
+                            if (checkbox === null || checkbox.checked) return;
 
                             checkbox.click();
                         });
