@@ -70,6 +70,13 @@ export default function ({
             }
         };
 
+        // Set whether to omit the grade from the final grade
+        if (typeof omitFromFinalGrade === 'boolean') {
+            const checkbox = document.getElementById('assignment_omit_from_final_grade');
+
+            checkbox.checked = omitFromFinalGrade;
+        };
+
         // Don't change submission type settings when creating new quiz
         if (routeName === 'courses.new-quizzes.new') return;
 
@@ -125,13 +132,6 @@ export default function ({
 
                     break;
             }
-        };
-
-        // Set whether to omit the grade from the final grade
-        if (typeof omitFromFinalGrade === 'boolean') {
-            const checkbox = document.getElementById('assignment_omit_from_final_grade');
-
-            checkbox.checked = omitFromFinalGrade;
         };
 
     });
