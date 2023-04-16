@@ -70,6 +70,9 @@ export default function ({
             }
         };
 
+        // Don't change submission type settings when creating new quiz
+        if (routeName === 'courses.new-quizzes.new') return;
+
         // Select submission type if defined
         if (typeof submissionType === 'string') {
             const select = document.getElementById('assignment_submission_type');
