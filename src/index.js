@@ -13,7 +13,7 @@ export default function ({
     submissionType,
     onlineEntryOptions
 }) {
-    router.onRoute('courses.assignments.new', async () => {
+    router.onRoute(['courses.assignments.new', 'courses.new-quizzes.new'], async (params, routeName) => {
         await dom.onElementReady('#edit_assignment_wrapper');
 
         // Set points possible if defined
