@@ -13,7 +13,7 @@ export default function ({
     submissionType,
     onlineEntryOptions
 }) {
-    router.onRoute('courses.assignments.new', async () => {
+    router.onRoute(['courses.assignments.new', 'courses.new-quizzes.new'], async (params, routeName) => {
         await dom.onElementReady('#edit_assignment_wrapper');
 
         // Set points possible if defined
@@ -70,6 +70,16 @@ export default function ({
             }
         };
 
+        // Set whether to omit the grade from the final grade
+        if (typeof omitFromFinalGrade === 'boolean') {
+            const checkbox = document.getElementById('assignment_omit_from_final_grade');
+
+            checkbox.checked = omitFromFinalGrade;
+        };
+
+        // Don't change submission type settings when creating new quiz
+        if (routeName === 'courses.new-quizzes.new') return;
+
         // Select submission type if defined
         if (typeof submissionType === 'string') {
             const select = document.getElementById('assignment_submission_type');
@@ -122,13 +132,6 @@ export default function ({
 
                     break;
             }
-        };
-
-        // Set whether to omit the grade from the final grade
-        if (typeof omitFromFinalGrade === 'boolean') {
-            const checkbox = document.getElementById('assignment_omit_from_final_grade');
-
-            checkbox.checked = omitFromFinalGrade;
         };
 
     });

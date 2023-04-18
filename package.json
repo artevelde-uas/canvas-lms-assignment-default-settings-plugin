@@ -1,7 +1,7 @@
 {
   "name": "@artevelde-uas/canvas-lms-assignment-default-settings-plugin",
-  "version": "0.3.1",
-  "description": "Sets default options when creating a new assignment",
+  "version": "0.3.2",
+  "description": "Sets default options when creating a new assignment or quiz",
   "keywords": [
     "Canvas LMS"
   ],
@@ -16,7 +16,7 @@
     "src/"
   ],
   "peerDependencies": {
-    "@artevelde-uas/canvas-lms-app": "^1.11.0"
+    "@artevelde-uas/canvas-lms-app": "^1.12.1"
   },
   "config": {
     "scope": {
